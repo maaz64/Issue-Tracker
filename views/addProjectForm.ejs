@@ -1,0 +1,14 @@
+  
+<form action="/issue-tracker/create-project" method="POST" class="my-5">
+  <div class="col mb-3 mx-5 my-2">
+    <input type="text" class="form-control" name="name" placeholder="Project Title" aria-label="Project Title" required>
+  </div>
+  <div class="col mb-3 mx-5 my-2">
+    <input type="text" class="form-control" name="author" placeholder="Author" aria-label="Author" required>
+  </div>
+  
+  <div class=" mx-5 my-2">
+    <textarea class="form-control" name="description" placeholder="Description" id="description" aria-label="With textarea" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-outline-success mx-5 my-2">Add Project</button>
+</form>

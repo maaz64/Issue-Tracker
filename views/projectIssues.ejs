@@ -1,0 +1,28 @@
+<div style="display: flex; align-items: center; justify-content: space-between;">
+  <h2 style="text-align: center; margin-top: 10px; margin-left: 2rem;">Issues related to <%=project_name%></h2>
+  <div>
+    <a href='/issue-tracker/create-issue/<%=id%>'>
+      <button class="btn btn-outline-danger mx-5 my-3" type="submit">Create Issue</button>
+    </a>
+  </div>
+</div>
+<% if(issues.length===0 ){%>
+  <h3 style="text-align: center;">No issue created yet...</h3>
+  <%} else{%>
+    <% for(issue of issues){%>
+      <div class="card w-80 mb-3 mx-4 my-4">
+        <div class="card-body">
+          <h5 class="card-title">
+            <%=issue.title%>
+          </h5>
+          <p class="card-text">
+            <%=issue.description%>
+          </p>
+          <footer class="blockquote-footer my-1"><cite title="Source Title">
+              <%=issue.author%>
+            </cite></footer>
+
+        </div>
+      </div>
+      <%}%>
+        <%}%>

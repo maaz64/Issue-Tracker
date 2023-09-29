@@ -1,0 +1,28 @@
+
+
+
+<div style="display: flex; align-items: center; justify-content: space-between;">
+<h2 style="text-align: center; margin-top: 10px; margin-left: 2rem;">PROJECTS</h2>
+<div >
+<a href='/issue-tracker/add-project' >
+  <button class="btn btn-outline-success mx-5 my-3" type="submit">Create New Project</button>
+</a>
+</div>
+</div>
+
+<% if(projects.length===0 ){%>
+  <h3 style="text-align: center;">Create a project first...</h3>
+  <%} else{%>
+<% for(project of projects){%>
+<a href="issue-tracker/project-issues/<%=project.id%>" style="text-decoration: none; color: black;">
+<div class="card w-80 mb-3 mx-4 my-4" >
+    <div class="card-body" >
+      <h5 class="card-title"><%=project.name%></h5>
+      <p class="card-text"><%=project.description%></p>
+      <footer class="blockquote-footer my-1"><cite title="Source Title"><%=project.author%></cite></footer>
+
+    </div>
+  </div>
+</a>
+  <%}%>
+  <%}%>

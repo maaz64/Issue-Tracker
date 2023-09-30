@@ -1,5 +1,27 @@
 <div style="display: flex; align-items: center; justify-content: space-between;">
   <h2 style="text-align: center; margin-top: 10px; margin-left: 2rem;">Issues related to <%=project_name%></h2>
+
+  <form  action="/issue-tracker/project-issues/<%=id%>/filter" method="POST" class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" name="search_input" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    <!-- <div class="btn-group">
+      <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Filter By
+      </button>
+      <ul class="dropdown-menu">
+        <li><a >Author</a></li>
+        <li><a >Bugs</a></li>
+        <li><a >UI</a></li>
+        <li><a >Documentation</a></li>
+      </ul>
+    </div> -->
+  <select class="mx-5 my-1" name="category" aria-label="Default select example">
+    <option selected disabled>Filter</option>
+    <option value="author">Author</option>
+    <option value="title">Title</option>
+    <option value="description">Description</option>
+  </select>
+</form>
   <div>
     <a href='/issue-tracker/create-issue/<%=id%>'>
       <button class="btn btn-outline-danger mx-5 my-3" type="submit">Create Issue</button>
@@ -25,4 +47,4 @@
         </div>
       </div>
       <%}%>
-        <%}%>
+      <%}%>

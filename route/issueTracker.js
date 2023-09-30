@@ -1,18 +1,18 @@
+// importing required modules and files
 const express = require('express');
-const {addProjectPage, createProject,projectIssue,createIssuePage,createIssue} = require('../controller/issueController');
+const {addProjectPage, createProject,projectIssue,createIssuePage,createIssue,filterIssue} = require('../controller/issueController');
 const router = express.Router();
 
-router.get('/add-project', addProjectPage);
-router.post('/create-project',createProject);
-router.get('/create-issue/:id', createIssuePage);
-router.post('/create-issue/:id',createIssue);
-router.get('/project-issues/:id',projectIssue);
-// router.get('/', issueTrackerPage)
-// router.get('/createProject', createProject)
-// router.post('/addProject',addProjectToMongoDB)
-// router.get('/projectDetails', projectDetails)
-// router.post('/filterProjectDetails', filterProjectDetails)
-// router.get('/createAnIssue/:id', createAnIssue)
-// router.post('/createAnIssue/:id/addIssue', addAnIssue)
 
+// creating get routes 
+router.get('/add-project', addProjectPage);
+router.get('/create-issue/:id', createIssuePage);
+router.get('/project-issues/:id',projectIssue);
+
+// creating post routes for creating project and creating issue
+router.post('/create-project',createProject);
+router.post('/create-issue/:id',createIssue);
+router.post('/project-issues/:id/filter',filterIssue);
+
+// exporting the router
 module.exports = router;
